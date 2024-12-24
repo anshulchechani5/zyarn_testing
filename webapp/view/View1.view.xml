@@ -1,0 +1,178 @@
+<mvc:View controllerName="Zppyarntesting.zppyartesting.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"  xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:Tab="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Panel id="Panel1" class="sapUiSmallMarginBottom">
+                <F:SimpleForm id="Form1" layout="ResponsiveGridLayout" columnsL="3" columnsXL="3" columnsM="2" editable="true">
+                    <F:content>
+                        <C:Title id="t1" />
+                        <Label id="PlantLab" required="true" text="Plant" />
+                        <Input id="Plant" width="150px" maxLength="4" editable="true"/>
+                        <Label id="ppty" required="true" text="Party Bill No." />
+                        <Input id="partybillno" width="150px"   editable="true"/>
+                        <Label id="sup" text="Supplier Code" />
+                        <!-- <Input id="suppliercode" width="150px"   editable="true"/> -->
+                        <ComboBox items="{path : '/Supplier',length : '100000'}" width="150px"     showSecondaryValues="true" id="suppliercode" >
+                            <items>
+                                <C:ListItem id="perator" text="{Supplier}" key="{Supplier}" additionalText="{SupplierName}"/>
+                            </items>
+                            </ComboBox>
+                        <Label id="get"  />
+                        <Button id="TableDataCall" width="100px" text="Get" press="GetTableData"/>
+                        <Button id="Change" width="100px" text="Change" visible="{oSelction>/change}" press="onchange"/>
+                        <C:Title id="t2" />
+                        <Label id="IDlog" required="true" text="Login" />
+                        <Input id="Login" width="150px"  editable="true"/>
+                        <Label id="pass" required="true" text="Password" />
+                        <Input id="password" type="Password" width="150px"   editable="true"/>
+                        <Label id="sub"  />
+                        <Button id="submit" width="150px" text="Submit" press="Recbatch"/>
+
+                    </F:content>
+                </F:SimpleForm>
+            </Panel>
+            <Panel id="Panel2" class="sapUiSmallMarginBottom">
+                <Tab:Table id="FirstScreenTable" selectionBehavior="RowSelector" rows="{oFirstScreenTableDataModel>/aFirstScreenTableData}" >
+                <Tab:extension>
+                        <OverflowToolbar id="oftb" style="Clear">
+                            <ToolbarSpacer id="tbs" />
+                            <Button id="GoToNextPage" icon="sap-icon://open-command-field" tooltip="Go to next Page" press="GoToNextPage1"/>
+                            <!-- <Button id="TableSaveButton" icon="sap-icon://save" tooltip="Save Table records" press="SaveTableData"/> -->
+                            <!-- <Button id="TableDeleteButton" icon="sap-icon://delete" tooltip="Delete Table records" press="DeletaTableData"/> -->
+                        </OverflowToolbar>
+                    </Tab:extension>
+                    <Tab:columns>
+                        <Tab:Column id="Table_tc1" width="8rem">
+                            <Label id="Table_Label1" text="Name Of Supplier" />
+                            <Tab:template>
+                                <Input id="Table_Input1" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>suppliername}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc2" width="8rem">
+                            <Label id="Table_Label2" text="Supplier Code" />
+                            <Tab:template>
+                                <Input id="Table_Input2" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>suppliercode}"/>
+                            </Tab:template>
+                        </Tab:Column>   
+                        <Tab:Column id="Table_tc4" width="10rem">
+                            <Label id="Table_Label4" text="Material" />
+                            <Tab:template>
+                                <Input id="Table_Input4" type="Text" maxLength="12" editable="false" value="{oFirstScreenTableDataModel>Material}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc5" width="11rem">
+                            <Label id="Table_Label5" text="Material Desc." />
+                            <Tab:template>
+                                <Input id="Table_Input5" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>matdesc}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc6" width="7rem">
+                            <Label id="Table_Label6" text="Vehicle Number" />
+                            <Tab:template>
+                                <Input id="Table_Input6" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>vehiclenumber}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc7" width="9rem">
+                            <Label id="Table_Label7" text="Party Bill Number" />
+                            <Tab:template>
+                                <Input id="Table_Input7" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>partybillnumber}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc8" width="7rem">
+                            <Label id="Table_Label8" text="Party Bill Date" />
+                            <Tab:template>
+                                <Input id="Table_Input8" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>partybilldate}"/>
+                            </Tab:template>
+                        </Tab:Column> 
+                        <Tab:Column id="Table_tc9" width="7rem">
+                            <Label id="Table_Label9" text="Posting Date" />
+                            <Tab:template>
+                                <Input id="Table_Input9" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>postingdate}"/>
+                            </Tab:template>
+                        </Tab:Column> 
+                         <Tab:Column id="Table_tc10" width="6rem">
+                            <Label id="Table_Label10" text="Plant" />
+                            <Tab:template>
+                                <Input id="Table_Input10" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>plant}"/>
+                            </Tab:template>
+                        </Tab:Column>
+                         <Tab:Column id="Table_tc11" width="5rem">
+                            <Label id="Table_Label11" text="Storage Loaction" />
+                            <Tab:template>
+                                <Input id="Table_Input11" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>storagelocation}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc12" width="6rem">
+                            <Label id="Table_Label12" text="Mill Name" />
+                            <Tab:template>
+                                <Input id="Table_Input12" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>millname}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc13" width="6rem">
+                            <Label id="Table_Label13" text="Lot Number" />
+                            <Tab:template>
+                                <Input id="Table_Input13" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>lotnumber}"/>
+                            </Tab:template>
+                        </Tab:Column> 
+                        <Tab:Column id="Table_tc22" width="6rem">
+                            <Label id="Table_Label22" text="Batch" />
+                            <Tab:template>
+                                <Input id="Table_Input22" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>batch}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc14" width="6rem">
+                            <Label id="Table_Label14" text="Sales Order" />
+                            <Tab:template>
+                                <Input id="Table_Input14" type="Text" maxLength="12" editable="false" value="{oFirstScreenTableDataModel>salesorder}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc15" width="8rem">
+                            <Label id="Table_Label15" text="Quantity Base Unit" />
+                            <Tab:template>
+                                <Input id="Table_Input15" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>quantitybaseunit}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc16" width="5rem">
+                            <Label id="Table_Label16" text="No Of Bags" />
+                            <Tab:template>
+                                <Input id="Table_Input16" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>noofbags}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc17" width="5rem">
+                            <Label id="Table_Label17" text="No Of Cones" />
+                            <Tab:template>
+                                <Input id="Table_Input17" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>noofcones}"/>
+                            </Tab:template>
+                        </Tab:Column>  
+                        <Tab:Column id="Table_tc18" width="9rem">
+                            <Label id="Table_Label18" text="Supplier CSP" />
+                            <Tab:template>
+                                <Input id="Table_Input18" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>suppliercsp}"/>
+                            </Tab:template>
+                        </Tab:Column>
+                         <Tab:Column id="Table_tc19" width="9rem">
+                            <Label id="Table_Label19" text="Supplier Count" />
+                            <Tab:template>
+                                <Input id="Table_Input19" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>suppliercount}"/>
+                            </Tab:template>
+                        </Tab:Column>
+                         <Tab:Column id="Table_tc20" width="8rem">
+                            <Label id="Table_Label20" text="Supplier CSP CV%" />
+                            <Tab:template>
+                                <Input id="Table_Input20" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>suppliercspcvper}"/>
+                            </Tab:template>
+                        </Tab:Column>
+                         <Tab:Column id="Table_tc21" width="8rem">
+                            <Label id="Table_Label21" text="Supplier Count CV%" />
+                            <Tab:template>
+                                <Input id="Table_Input21" type="Text" maxLength="10" editable="false" value="{oFirstScreenTableDataModel>suppliercountcvper}"/>
+                            </Tab:template>
+                        </Tab:Column>                      
+                    </Tab:columns>
+                </Tab:Table>
+            </Panel>
+            
+        </content>
+    </Page>
+</mvc:View>

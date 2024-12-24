@@ -1,0 +1,235 @@
+<mvc:View controllerName="Zppyarntesting.zppyartesting.controller.yarntesting"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"  xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:Tab="sap.ui.table">
+    <Page id="yarntesting" title="{i18n>title}">
+        <content>
+                <F:SimpleForm id="Form1" layout="ResponsiveGridLayout" columnsL="1" columnsXL="1" columnsM="1" editable="true">
+                    <F:content>
+                        <Label id="kl1" required="true" text="Remark" />
+                         <TextArea  id="idremark"  value="{oSecondScreenInputFieldModel>/remark}"  height="50%" width="50%" rows="3"  />
+                        <Label id="status" required="true" text="Status" ></Label>
+                        <ComboBox width="150px" value="{oSecondScreenInputFieldModel>/status}"  id="idstatus"   >
+						    <items>
+						        <C:ListItem id="sa" text="Hold" key="Hold" />
+                                <C:ListItem id="s1" text="Approved" key="Pass" />
+							    <C:ListItem id="sb" text="Rejected" key="Fail" />
+						    </items>
+				        </ComboBox>
+                    </F:content>
+                </F:SimpleForm>
+            <Panel id="Panel2" class="sapUiSmallMarginBottom">
+                <F:SimpleForm id="Form2" layout="ResponsiveGridLayout" columnsL="2" columnsXL="2" columnsM="2" editable="true">
+                    <F:content>  
+                    <C:Title id="C_Title6"/>
+                        <Tab:Table id="FirstTable" class="CssForTable"  rows="{oSecondScreenFirstTableModel>/aSecondScreenFirstTableData}" >
+                            <Tab:extension>
+                                <OverflowToolbar id="FirstTable_oftb" style="Clear">
+                                    <ToolbarSpacer id="FirstTable_tbs" />
+                                    <!-- <Button id="FirstTableDeleteButton" icon="sap-icon://delete" tooltip="Delete Table records" press="DeletaTableData"/> -->
+                                </OverflowToolbar>
+                            </Tab:extension>
+                            <Tab:columns>
+                                <Tab:Column id="FirstTable_tc1" width="9rem">
+                                    <Label id="FirstTable_Label1" text="Name Of Supplier" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input1" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>suppliername}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc2" width="9rem">
+                                    <Label id="FirstTable_Label2" text="Supplier Code" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input2" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>suppliercode}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                <Tab:Column id="FirstTable_tc3" width="9rem">
+                                    <Label id="FirstTable_Label3" text="Material" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input3" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>Material}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc4" width="11rem">
+                                    <Label id="FirstTable_Label4" text="Material Desc." />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input4" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>matdesc}"/>
+                                    </Tab:template>
+                                </Tab:Column>  
+                                <Tab:Column id="FirstTable_tc5" width="7rem">
+                                    <Label id="FirstTable_Label5" text="Vehicle Number" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input5" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>vehiclenumber}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc6" width="7rem">
+                                    <Label id="FirstTable_Label6" text="Party Bill Number" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input6" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>partybillnumber}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc7" width="7rem">
+                                    <Label id="FirstTable_Label7" text="Party Bill Date" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input7" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>partybilldate}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc8" width="7rem">
+                                    <Label id="FirstTable_Label8" text="Posting Date" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input8" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>postingdate}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc9" width="5rem">
+                                    <Label id="FirstTable_Label9" text="Plant" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input9" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>plant}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                <Tab:Column id="FirstTable_tc10" width="9rem">
+                                    <Label id="FirstTable_Label10" text="Storage Loaction" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input10" type="Text" editable="false" value="{oSecondScreenFirstTableModel>storagelocation}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc11" width="9rem">
+                                    <Label id="FirstTable_Label11" text="Mill Name" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input11" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>millname}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                 <Tab:Column id="FirstTable_tc12" width="9rem">
+                                    <Label id="FirstTable_Label12" text="Lot Number" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input12" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>lotnumber}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                 <Tab:Column id="FirstTable_tc22" width="9rem">
+                                    <Label id="FirstTable_Label22" text="Batch" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input22" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>batch}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                <Tab:Column id="FirstTable_tc13" width="9rem">
+                                    <Label id="FirstTable_Label13" text="Sales Order" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input13" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>salesorder}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc14" width="7rem">
+                                    <Label id="FirstTable_Label14" text="Quantity Base Unit" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input14" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>quantitybaseunit}"/>
+                                    </Tab:template>
+                                </Tab:Column>  
+                                <Tab:Column id="FirstTable_tc15" width="7rem">
+                                    <Label id="FirstTable_Label15" text="No Of Bags" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input15" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>noofbags}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc16" width="7rem">
+                                    <Label id="FirstTable_Label16" text="No Of Cones" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input16" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>noofcones}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc17" width="7rem">
+                                    <Label id="FirstTable_Label17" text="Supplier CSP" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input17" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>suppliercsp}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc18" width="7rem">
+                                    <Label id="FirstTable_Label18" text="Supplier Count" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input18" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>suppliercount}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="FirstTable_tc19" width="7rem">
+                                    <Label id="FirstTable_Label19" text="Supplier CSP CV%" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input19" type="Text"  editable="false" value="{oSecondScreenFirstTableModel>suppliercspcvper}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                <Tab:Column id="FirstTable_tc20" width="7rem">
+                                    <Label id="FirstTable_Label20" text="Supplier Count CV%" />
+                                    <Tab:template>
+                                        <Input id="FirstTable_Input20" type="Text" editable="false" value="{oSecondScreenFirstTableModel>suppliercountcvper}"/>
+                                    </Tab:template>
+                                </Tab:Column>                                    
+                            </Tab:columns>
+                        </Tab:Table>                   
+                      <C:Title id="C_Title5"/>
+                        <Tab:Table id="SecondTable" class="CssForTable" rows="{oSecondScreenSecondTableModel>/aSecondScreenSecondTableData}" >
+                            <Tab:extension>
+                                <OverflowToolbar id="oftb" style="Clear">
+                                    <ToolbarSpacer id="tbs" />
+                                    <!-- <Button id="SecondTableDeleteButton" icon="sap-icon://delete" tooltip="Delete Table records" press="DeletaTableData"/> -->
+                                </OverflowToolbar>
+                            </Tab:extension>
+                            <Tab:columns>
+                                <Tab:Column id="SecondTable_tc1" width="6rem">
+                                    <Label id="SecondTable_Label1" text="S.No." />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input1"  editable="false" value="{oSecondScreenSecondTableModel>sno}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                <Tab:Column id="SecondTable_tc2" width="11rem">
+                                    <Label id="SecondTable_Label2" text="Parmeters" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input2" editable="false" value="{oSecondScreenSecondTableModel>Parmeters}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                 <Tab:Column id="SecondTable_tc4" width="22rem">
+                                    <Label id="SecondTable_Label4" text="Result" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input4"   maxLength="40" editable="true" value="{oSecondScreenSecondTableModel>Result}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                <!--
+                                <Tab:Column id="SecondTable_tc3" width="6rem">
+                                    <Label id="SecondTable_Label3" text="Count CV%" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input3" type="Text" maxLength="10" editable="false" value="{oSecondScreenSecondTableModel>COUNTCVPER}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                
+                                <Tab:Column id="SecondTable_tc5" width="6rem">
+                                    <Label id="SecondTable_Label5" text="CSP" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input5" submit="onchangeremark"  type="Text" maxLength="10" editable="true" value="{oSecondScreenSecondTableModel>CSP}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+
+                                 <Tab:Column id="SecondTable_tc6" width="6rem">
+                                    <Label id="SecondTable_Label6" text="Min CSP" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input6" submit="onchangeremark"  type="Text" maxLength="10" editable="true" value="{oSecondScreenSecondTableModel>MINCSP}"/>
+                                    </Tab:template>
+                                </Tab:Column> 
+                                <Tab:Column id="SecondTable_tc7" width="6rem">
+                                    <Label id="SecondTable_Label7" text="Max CSP" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input7" type="Text" maxLength="10" editable="false" value="{oSecondScreenSecondTableModel>MAXCSP}"/>
+                                    </Tab:template>
+                                </Tab:Column>
+                                
+                                <Tab:Column id="SecondTable_tc8" width="6rem">
+                                    <Label id="SecondTable_Label8" text="CSP CV%" />
+                                    <Tab:template>
+                                        <Input id="SecondTable_Input8" submit="onchangeremark"  type="Text" maxLength="10" editable="true" value="{oSecondScreenSecondTableModel>CSPCVPER}"/>
+                                    </Tab:template>
+                                </Tab:Column>                                         -->
+                            </Tab:columns>
+                        </Tab:Table>  
+                    </F:content>
+                </F:SimpleForm>
+            </Panel>
+        </content>
+         <footer>
+            <Bar id="IdforBar">
+                <contentRight>
+                    <Button icon="sap-icon://save" id="SaveButton" press="savedata" type="Emphasized" text="Save" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
